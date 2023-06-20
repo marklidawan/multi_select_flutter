@@ -139,128 +139,128 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
       data: ThemeData(
         unselectedWidgetColor: widget.unselectedColor ?? Colors.black54,
       ),
-      // child: CheckboxListTile(
-      //   checkColor: widget.checkColor,
-      //   value: item.selected,
-      //   activeColor: widget.colorator != null
-      //       ? widget.colorator!(item.value) ?? widget.selectedColor
-      //       : widget.selectedColor,
-      //   title: Text(
-      //     item.label,
-      //     style: item.selected
-      //         ? widget.selectedItemsTextStyle
-      //         : widget.itemsTextStyle,
-      //   ),
-      //   controlAffinity: ListTileControlAffinity.leading,
-      //   onChanged: (checked) {
-      //     setState(() {
-      //       _selectedValues = widget.onItemCheckedChange(
-      //           _selectedValues, item.value, checked!);
-
-      //       if (checked) {
-      //         item.selected = true;
-      //       } else {
-      //         item.selected = false;
-      //       }
-      //       if (widget.separateSelectedItems) {
-      //         _items = widget.separateSelected(_items);
-      //       }
-      //     });
-      //     if (widget.onSelectionChanged != null) {
-      //       widget.onSelectionChanged!(_selectedValues);
-      //     }
-      //   },
-      // ),
-      child: Card(
-      margin: const EdgeInsets.fromLTRB(15, 0, 15, 5),
-      elevation: 3.0,
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Row(
-               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                RichText(
-                  text: TextSpan(
-                    style: TextStyle(
-                      fontSize: 14.0,
-                      color: Colors.black,
-                    ),
-                    children: <TextSpan>[
-                      const TextSpan(text: 'Subject Code: '),
-                      TextSpan(text: 'subjectCode', style: TextStyle(
-                      fontSize: 14.0,color: Colors.black,
-                    ),)
-                    ]
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Expanded(
-                  child: RichText(
-                    text: TextSpan(
-                      style: TextStyle(
-                      fontSize: 14.0,color: Colors.black,
-                    ),
-                      children: <TextSpan>[
-                        const TextSpan(text: 'Subject Name: '),
-                        TextSpan(text: 'subjectName', style: TextStyle(
-                      fontSize: 14.0,color: Colors.black,
-                    ),),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Expanded(
-                  child: RichText(
-                    text: TextSpan(
-                      style:TextStyle(
-                      fontSize: 14.0,color: Colors.black,
-                    ),
-                      children: <TextSpan>[
-                        const TextSpan(text: 'Lecture Unit : '),
-                        TextSpan(text: 'lectureUnit', style: TextStyle(
-                      fontSize: 14.0,color: Colors.black,
-                    ),),
-                      ],
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: RichText(
-                    text: TextSpan(
-                      style: TextStyle(
-                      fontSize: 14.0,color: Colors.black,
-                    ),
-                      children: <TextSpan>[
-                        const TextSpan(text: 'Lecture Hour: '),
-                        TextSpan(text: 'lectureHour', style: TextStyle(
-                      fontSize: 14.0,color: Colors.black,
-                    ),),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            
-            
-          ],
+      child: CheckboxListTile(
+        checkColor: widget.checkColor,
+        value: item.selected,
+        activeColor: widget.colorator != null
+            ? widget.colorator!(item.value) ?? widget.selectedColor
+            : widget.selectedColor,
+        title: Text(
+          item.label,
+          style: item.selected
+              ? widget.selectedItemsTextStyle
+              : widget.itemsTextStyle,
         ),
+        controlAffinity: ListTileControlAffinity.leading,
+        onChanged: (checked) {
+          setState(() {
+            _selectedValues = widget.onItemCheckedChange(
+                _selectedValues, item.value, checked!);
+
+            if (checked) {
+              item.selected = true;
+            } else {
+              item.selected = false;
+            }
+            if (widget.separateSelectedItems) {
+              _items = widget.separateSelected(_items);
+            }
+          });
+          if (widget.onSelectionChanged != null) {
+            widget.onSelectionChanged!(_selectedValues);
+          }
+        },
       ),
-    ),
+    //   child: Card(
+    //   margin: const EdgeInsets.fromLTRB(15, 0, 15, 5),
+    //   elevation: 3.0,
+    //   child: Padding(
+    //     padding: const EdgeInsets.all(20.0),
+    //     child: Column(
+    //       crossAxisAlignment: CrossAxisAlignment.stretch,
+    //       children: [
+    //         Row(
+    //            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //           children: [
+    //             RichText(
+    //               text: TextSpan(
+    //                 style: TextStyle(
+    //                   fontSize: 14.0,
+    //                   color: Colors.black,
+    //                 ),
+    //                 children: <TextSpan>[
+    //                   const TextSpan(text: 'Subject Code: '),
+    //                   TextSpan(text: 'subjectCode', style: TextStyle(
+    //                   fontSize: 14.0,color: Colors.black,
+    //                 ),)
+    //                 ]
+    //               ),
+    //             ),
+    //           ],
+    //         ),
+    //         const SizedBox(height: 10),
+    //         Row(
+    //           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    //           children: [
+    //             Expanded(
+    //               child: RichText(
+    //                 text: TextSpan(
+    //                   style: TextStyle(
+    //                   fontSize: 14.0,color: Colors.black,
+    //                 ),
+    //                   children: <TextSpan>[
+    //                     const TextSpan(text: 'Subject Name: '),
+    //                     TextSpan(text: 'subjectName', style: TextStyle(
+    //                   fontSize: 14.0,color: Colors.black,
+    //                 ),),
+    //                   ],
+    //                 ),
+    //               ),
+    //             ),
+    //           ],
+    //         ),
+    //         const SizedBox(height: 10),
+    //         Row(
+    //           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    //           children: [
+    //             Expanded(
+    //               child: RichText(
+    //                 text: TextSpan(
+    //                   style:TextStyle(
+    //                   fontSize: 14.0,color: Colors.black,
+    //                 ),
+    //                   children: <TextSpan>[
+    //                     const TextSpan(text: 'Lecture Unit : '),
+    //                     TextSpan(text: 'lectureUnit', style: TextStyle(
+    //                   fontSize: 14.0,color: Colors.black,
+    //                 ),),
+    //                   ],
+    //                 ),
+    //               ),
+    //             ),
+    //             Expanded(
+    //               child: RichText(
+    //                 text: TextSpan(
+    //                   style: TextStyle(
+    //                   fontSize: 14.0,color: Colors.black,
+    //                 ),
+    //                   children: <TextSpan>[
+    //                     const TextSpan(text: 'Lecture Hour: '),
+    //                     TextSpan(text: 'lectureHour', style: TextStyle(
+    //                   fontSize: 14.0,color: Colors.black,
+    //                 ),),
+    //                   ],
+    //                 ),
+    //               ),
+    //             ),
+    //           ],
+    //         ),
+            
+            
+    //       ],
+    //     ),
+    //   ),
+    // ),
     );
   }
 
