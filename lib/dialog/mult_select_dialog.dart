@@ -81,6 +81,9 @@ class MultiSelectDialog<T> extends StatefulWidget with MultiSelectActions<T> {
 
   final Function()? onPress;
 
+  final Icon? trailingIcon;
+
+
   MultiSelectDialog({
     required this.items,
     required this.initialValue,
@@ -107,6 +110,7 @@ class MultiSelectDialog<T> extends StatefulWidget with MultiSelectActions<T> {
     this.separateSelectedItems = false,
     this.checkColor,
     this.onPress,
+    this.trailingIcon,
   });
 
   @override
