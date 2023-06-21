@@ -147,6 +147,7 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
         secondary: IconButton(
           icon: Icon(LineIcons.infoCircle), 
           onPressed: widget.onPress,
+          color: Theme.of(context).primaryColor.withOpacity(0.35),
         ),
         checkColor: widget.checkColor,
         value: item.selected,
