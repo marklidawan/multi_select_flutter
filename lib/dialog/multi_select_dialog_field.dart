@@ -99,6 +99,8 @@ class MultiSelectDialogField<V> extends FormField<List<V>> {
 
   /// Whether the user can dismiss the widget by tapping outside
   final bool isDismissible;
+  
+  final Function()? onPress;
 
   final AutovalidateMode autovalidateMode;
   final FormFieldValidator<List<V>>? validator;
@@ -135,6 +137,7 @@ class MultiSelectDialogField<V> extends FormField<List<V>> {
     this.selectedItemsTextStyle,
     this.separateSelectedItems = false,
     this.checkColor,
+    this.onPress,
     this.isDismissible = true,
     this.onSaved,
     this.validator,
@@ -158,6 +161,7 @@ class MultiSelectDialogField<V> extends FormField<List<V>> {
                 decoration: decoration,
                 listType: listType,
                 onConfirm: onConfirm,
+                onPress: onPress,
                 onSelectionChanged: onSelectionChanged,
                 initialValue: initialValue,
                 searchable: searchable,
@@ -197,6 +201,7 @@ class _MultiSelectDialogFieldView<V> extends StatefulWidget {
   final MultiSelectChipDisplay<V>? chipDisplay;
   final List<V> initialValue;
   final void Function(List<V>)? onConfirm;
+  final Function()? onPress;
   final bool? searchable;
   final Text? confirmText;
   final Text? cancelText;
@@ -228,6 +233,7 @@ class _MultiSelectDialogFieldView<V> extends StatefulWidget {
     this.decoration,
     this.onSelectionChanged,
     this.onConfirm,
+    this.onPress,
     this.chipDisplay,
     this.initialValue = const [],
     this.searchable,
@@ -285,6 +291,7 @@ class _MultiSelectDialogFieldView<V> extends StatefulWidget {
         separateSelectedItems = field.separateSelectedItems,
         checkColor = field.checkColor,
         isDismissible = field.isDismissible,
+        onPress = field.onPress,
         state = state;
 
   @override
@@ -381,6 +388,7 @@ class __MultiSelectDialogFieldViewState<V>
       context: context,
       builder: (ctx) {
         return MultiSelectDialog<V>(
+          onPress: widget.onPress,
           checkColor: widget.checkColor,
           selectedItemsTextStyle: widget.selectedItemsTextStyle,
           searchHintStyle: widget.searchHintStyle,
