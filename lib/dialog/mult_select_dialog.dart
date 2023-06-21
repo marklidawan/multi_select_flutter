@@ -78,6 +78,8 @@ class MultiSelectDialog<T> extends StatefulWidget with MultiSelectActions<T> {
   /// Set the color of the check in the checkbox
   final Color? checkColor;
 
+  final Function()? onLongPress;
+
   MultiSelectDialog({
     required this.items,
     required this.initialValue,
@@ -103,6 +105,7 @@ class MultiSelectDialog<T> extends StatefulWidget with MultiSelectActions<T> {
     this.selectedItemsTextStyle,
     this.separateSelectedItems = false,
     this.checkColor,
+    this.onLongPress,
   });
 
   @override
@@ -145,11 +148,14 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
         activeColor: widget.colorator != null
             ? widget.colorator!(item.value) ?? widget.selectedColor
             : widget.selectedColor,
-        title: Text(
-          item.label,
-          style: item.selected
-              ? widget.selectedItemsTextStyle
-              : widget.itemsTextStyle,
+        title: GestureDetector(
+          onLongPress: widget.onLongPress,
+          child: Text(
+            item.label,
+            style: item.selected
+                ? widget.selectedItemsTextStyle
+                : widget.itemsTextStyle,
+          ),
         ),
         controlAffinity: ListTileControlAffinity.leading,
         onChanged: (checked) {
