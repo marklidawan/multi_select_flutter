@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icons.dart';
 import '../util/multi_select_actions.dart';
 import '../util/multi_select_item.dart';
 import '../util/multi_select_list_type.dart';
@@ -78,7 +79,7 @@ class MultiSelectDialog<T> extends StatefulWidget with MultiSelectActions<T> {
   /// Set the color of the check in the checkbox
   final Color? checkColor;
 
-  final Function()? onLongPress;
+  final Function()? onPress;
 
   MultiSelectDialog({
     required this.items,
@@ -105,7 +106,7 @@ class MultiSelectDialog<T> extends StatefulWidget with MultiSelectActions<T> {
     this.selectedItemsTextStyle,
     this.separateSelectedItems = false,
     this.checkColor,
-    this.onLongPress,
+    this.onPress,
   });
 
   @override
@@ -143,13 +144,16 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
         unselectedWidgetColor: widget.unselectedColor ?? Colors.black54,
       ),
       child: CheckboxListTile(
+        secondary: IconButton(
+          icon: Icon(LineIcons.infoCircle), 
+          onPressed: widget.onPress,
+        ),
         checkColor: widget.checkColor,
         value: item.selected,
         activeColor: widget.colorator != null
             ? widget.colorator!(item.value) ?? widget.selectedColor
             : widget.selectedColor,
         title: GestureDetector(
-          onLongPress: widget.onLongPress,
           child: Text(
             item.label,
             style: item.selected
