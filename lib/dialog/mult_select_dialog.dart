@@ -176,13 +176,13 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
                       Text(
                         item.title,
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 12,
                           fontWeight: FontWeight.w800,
                           color: Colors.black
                         ),
                         softWrap: false,  
                         maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
+                        overflow: TextOverflow.visible,
                         textAlign: TextAlign.left,
                       ),
                       const SizedBox(height: 10 / 6,),
@@ -190,13 +190,13 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
                         item.label,
                         style: TextStyle(
                           overflow: TextOverflow.ellipsis,
-                          // fontSize: 16.0,
+                          fontSize: 12.0,
                           // fontWeight: FontWeight.w500,
                           color: Colors.black
                         ),
                         softWrap: false,  
                         maxLines: 5,
-                        overflow: TextOverflow.ellipsis,
+                        overflow: TextOverflow.visible,
                         textAlign: TextAlign.left,
                       ),
                     ],
