@@ -188,7 +188,7 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
                       ),
                       const SizedBox(height: 10 / 6,),
                       Text(
-                        item.label,
+                        item.faculty,
                         style: TextStyle(
                           overflow: TextOverflow.ellipsis,
                           fontSize: 14.0,
@@ -202,7 +202,21 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
                       ),
                       const SizedBox(height: 10 / 6,),
                       Text(
-                        item.acadUnits,
+                        item.label,
+                        style: TextStyle(
+                          overflow: TextOverflow.ellipsis,
+                          fontSize: 12.0,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.black
+                        ),
+                        softWrap: false,  
+                        maxLines: 5,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.left,
+                      ),
+                      const SizedBox(height: 10 / 6,),
+                      Text(
+                        '${item.acadUnits} academic units',
                         style: TextStyle(
                           overflow: TextOverflow.ellipsis,
                           fontSize: 12.0,
