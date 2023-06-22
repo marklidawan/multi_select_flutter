@@ -39,6 +39,9 @@ class MultiSelectDialogField<V> extends FormField<List<V>> {
   /// Fires when confirm is tapped.
   final void Function(List<V>) onConfirm;
 
+  
+  final void Function(List<V>) onConfirmBefore;
+
   /// Toggles search functionality.
   final bool searchable;
 
@@ -111,6 +114,7 @@ class MultiSelectDialogField<V> extends FormField<List<V>> {
   MultiSelectDialogField({
     required this.items,
     required this.onConfirm,
+    required this.onConfirmBefore,
     this.title,
     this.buttonText,
     this.buttonIcon,
