@@ -175,17 +175,17 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
                     children: [
                       RichText(
                         text: TextSpan(
-                          text: '${item.title} - ',
+                          text: item.title,
                           style: TextStyle(
                             fontSize: 14.0,
                             fontWeight: FontWeight.w800,
                             color: Colors.black
                           ),
                           children: <TextSpan>[
-                            TextSpan(text: item.acadUnits, style: TextStyle(
+                            TextSpan(text: '- ${item.acadUnits} units', style: TextStyle(
                               overflow: TextOverflow.ellipsis,
-                              fontSize: 14.0,
-                              // fontWeight: FontWeight.w500,
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.w300,
                               color: Colors.black
                             ),),
                           ],
