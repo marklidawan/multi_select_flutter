@@ -148,11 +148,11 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
         unselectedWidgetColor: widget.unselectedColor ?? Colors.black54,
       ),
       child: CheckboxListTile(
-        secondary: IconButton(
-          icon: Icon(LineIcons.infoCircle), 
-          onPressed: widget.onPress,
-          color: Theme.of(context).primaryColor.withOpacity(0.35),
-        ),
+        // secondary: IconButton(
+        //   icon: Icon(LineIcons.infoCircle), 
+        //   onPressed: widget.onPress,
+        //   color: Theme.of(context).primaryColor.withOpacity(0.35),
+        // ),
         checkColor: widget.checkColor,
         value: item.selected,
         activeColor: widget.colorator != null
@@ -190,18 +190,6 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
                             ),),
                           ],
                         ),
-                      ),
-                      Text(
-                        item.title,
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.black
-                        ),
-                        softWrap: false,  
-                        maxLines: 5,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.left,
                       ),
                       const SizedBox(height: 10 / 6,),
                       Text(
