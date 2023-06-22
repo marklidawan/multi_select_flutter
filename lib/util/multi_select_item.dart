@@ -3,7 +3,8 @@ class MultiSelectItem<T> {
   final T value;
   final String title;
   final String label;
+  final String acadUnits;
   bool selected = false;
 
-  MultiSelectItem(this.value, this.title, this.label);
+  MultiSelectItem(this.value, this.title, this.label, this.acadUnits);
 }

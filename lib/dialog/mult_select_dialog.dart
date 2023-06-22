@@ -81,7 +81,7 @@ class MultiSelectDialog<T> extends StatefulWidget with MultiSelectActions<T> {
 
   final Function()? onPress;
 
-  final Icon? trailingIcon;
+  // final Icon? trailingIcon;
 
 
   MultiSelectDialog({
@@ -110,7 +110,7 @@ class MultiSelectDialog<T> extends StatefulWidget with MultiSelectActions<T> {
     this.separateSelectedItems = false,
     this.checkColor,
     this.onPress,
-    this.trailingIcon,
+    // this.trailingIcon,
   });
 
   @override
@@ -173,6 +173,24 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      RichText(
+                        text: TextSpan(
+                          text: '${item.title} - ',
+                          style: TextStyle(
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.black
+                          ),
+                          children: <TextSpan>[
+                            TextSpan(text: item.acadUnits, style: TextStyle(
+                              overflow: TextOverflow.ellipsis,
+                              fontSize: 14.0,
+                              // fontWeight: FontWeight.w500,
+                              color: Colors.black
+                            ),),
+                          ],
+                        ),
+                      ),
                       Text(
                         item.title,
                         style: TextStyle(
