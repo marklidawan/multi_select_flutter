@@ -159,11 +159,51 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
             ? widget.colorator!(item.value) ?? widget.selectedColor
             : widget.selectedColor,
         title: GestureDetector(
-          child: Text(
-            item.label,
-            style: item.selected
-                ? widget.selectedItemsTextStyle
-                : widget.itemsTextStyle,
+          // child: Text(
+          //   item.label,
+          //   style: item.selected
+          //       ? widget.selectedItemsTextStyle
+          //       : widget.itemsTextStyle,
+          // ),
+          child: Row(
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        item.title,
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.black
+                        ),
+                        softWrap: false,  
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.left,
+                      ),
+                      const SizedBox(height: 10 / 6,),
+                      Text(
+                        item.label,
+                        style: TextStyle(
+                          overflow: TextOverflow.ellipsis,
+                          // fontSize: 16.0,
+                          // fontWeight: FontWeight.w500,
+                          color: Colors.black
+                        ),
+                        softWrap: false,  
+                        maxLines: 5,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.left,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
         controlAffinity: ListTileControlAffinity.leading,
