@@ -173,23 +173,18 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      RichText(
-                        text: TextSpan(
-                          text: item.title,
-                          style: TextStyle(
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.w800,
-                            color: Colors.black
-                          ),
-                          children: <TextSpan>[
-                            TextSpan(text: '- ${item.acadUnits} units', style: TextStyle(
-                              overflow: TextOverflow.ellipsis,
-                              fontSize: 12.0,
-                              fontWeight: FontWeight.w300,
-                              color: Colors.black
-                            ),),
-                          ],
+                      Text(
+                        item.title,
+                        style: TextStyle(
+                          overflow: TextOverflow.ellipsis,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.black
                         ),
+                        softWrap: false,  
+                        maxLines: 5,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.left,
                       ),
                       const SizedBox(height: 10 / 6,),
                       Text(
@@ -198,6 +193,20 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
                           overflow: TextOverflow.ellipsis,
                           fontSize: 14.0,
                           // fontWeight: FontWeight.w500,
+                          color: Colors.black
+                        ),
+                        softWrap: false,  
+                        maxLines: 5,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.left,
+                      ),
+                      const SizedBox(height: 10 / 6,),
+                      Text(
+                        item.acadUnits,
+                        style: TextStyle(
+                          overflow: TextOverflow.ellipsis,
+                          fontSize: 12.0,
+                          fontWeight: FontWeight.w300,
                           color: Colors.black
                         ),
                         softWrap: false,  
