@@ -358,7 +358,7 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
             widget.selectedColor ??
             Theme.of(context).primaryColor.withOpacity(0.35),
         label: Text(
-          item.label,
+          item.title,
           style: item.selected
               ? TextStyle(
                   color: widget.selectedItemsTextStyle?.color ??
