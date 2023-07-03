@@ -180,7 +180,7 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
                             color: Colors.black54,
                           ),
                           Text(
-                            'Locked',
+                            ' Locked',
                             style: TextStyle(
                               fontSize: 12.0,
                               color: Colors.red
