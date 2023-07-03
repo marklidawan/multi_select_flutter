@@ -148,11 +148,9 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
         unselectedWidgetColor: widget.unselectedColor ?? Colors.black54,
       ),
       child: CheckboxListTile(
-        // secondary: IconButton(
-        //   icon: Icon(LineIcons.infoCircle), 
-        //   onPressed: widget.onPress,
-        //   color: Theme.of(context).primaryColor.withOpacity(0.35),
-        // ),
+        secondary: Text(
+          '${item.noOfRegistered} / ${item.limit}'
+        ),
         checkColor: widget.checkColor,
         value: item.selected,
         activeColor: widget.colorator != null
@@ -173,6 +171,15 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      item.lock == 1 
+                      ? Text(
+                        'Locked',
+                        style: TextStyle(
+                          fontSize: 12.0,
+                          color: Colors.red
+                        ),
+                      )
+                      : Container(),
                       Text(
                         item.title,
                         style: TextStyle(
