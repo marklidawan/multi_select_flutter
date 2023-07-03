@@ -172,12 +172,21 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       item.lock == 1 
-                      ? Text(
-                        'Locked',
-                        style: TextStyle(
-                          fontSize: 12.0,
-                          color: Colors.red
-                        ),
+                      ? Row(
+                        children: [
+                          Icon(
+                            LineIcons.lock,
+                            size: 14.0,
+                            color: Colors.black54,
+                          ),
+                          Text(
+                            'Locked',
+                            style: TextStyle(
+                              fontSize: 12.0,
+                              color: Colors.red
+                            ),
+                          ),
+                        ],
                       )
                       : Container(),
                       Text(
