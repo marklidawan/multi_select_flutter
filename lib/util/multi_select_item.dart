@@ -5,7 +5,8 @@ class MultiSelectItem<T> {
   final String label;
   final String acadUnits;
   final String faculty;
+  final int lock;
   bool selected = false;
 
-  MultiSelectItem(this.value, this.title, this.label, this.acadUnits, this.faculty);
+  MultiSelectItem(this.value, this.title, this.label, this.acadUnits, this.faculty, this.lock);
 }
