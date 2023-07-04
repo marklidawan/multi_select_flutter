@@ -183,7 +183,8 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
                             ' Locked',
                             style: TextStyle(
                               fontSize: 12.0,
-                              color: Colors.red
+                              color: Colors.red,
+                              fontWeight: FontWeight.w800,
                             ),
                           ),
                         ],
@@ -427,6 +428,7 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
               ),
           onPressed: () {
             widget.onConfirmTap(context, _selectedValues, widget.onConfirm);
+            widget.onPress;
           },
         )
       ],
