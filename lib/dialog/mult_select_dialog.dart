@@ -79,7 +79,7 @@ class MultiSelectDialog<T> extends StatefulWidget with MultiSelectActions<T> {
   /// Set the color of the check in the checkbox
   final Color? checkColor;
 
-  final Function()? onPress;
+  final Function()? checkConflict;
 
   // final Icon? trailingIcon;
 
@@ -109,7 +109,7 @@ class MultiSelectDialog<T> extends StatefulWidget with MultiSelectActions<T> {
     this.selectedItemsTextStyle,
     this.separateSelectedItems = false,
     this.checkColor,
-    this.onPress,
+    this.checkConflict,
     // this.trailingIcon,
   });
 
@@ -428,7 +428,7 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
               ),
           onPressed: () {
             widget.onConfirmTap(context, _selectedValues, widget.onConfirm);
-            widget.onPress;
+            widget.checkConflict;
           },
         )
       ],
