@@ -176,7 +176,7 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
                       ? Row(
                         children: [
                           Icon(
-                            LineIcons.lock,
+                            Icons.lock_person_rounded,
                             size: 14.0,
                             color: Colors.black54,
                           ),
@@ -388,6 +388,8 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
         height: widget.height,
         width: widget.width ?? MediaQuery.of(context).size.width * 0.73,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               'Nothing to show',
