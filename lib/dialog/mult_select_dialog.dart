@@ -147,7 +147,9 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
       data: ThemeData(
         unselectedWidgetColor: widget.unselectedColor ?? Colors.black54,
       ),
-      child: CheckboxListTile(
+      child: item == null 
+      ? Text('Nothing to show') 
+      : CheckboxListTile(
         secondary: Text(
           '${item.noOfRegistered} / ${item.limit}'
         ),
@@ -428,7 +430,6 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
               ),
           onPressed: () {
             widget.onConfirmTap(context, _selectedValues, widget.onConfirm);
-            widget.checkConflict;
           },
         )
       ],
