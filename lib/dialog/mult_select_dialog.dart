@@ -147,7 +147,7 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
       data: ThemeData(
         unselectedWidgetColor: widget.unselectedColor ?? Colors.black54,
       ),
-      child: item == null 
+      child: item.title == null || item.title == ''
       ? Text('Nothing to show') 
       : CheckboxListTile(
         secondary: Text(
