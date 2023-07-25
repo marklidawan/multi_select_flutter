@@ -382,7 +382,7 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
           widget.listType == null || widget.listType == MultiSelectListType.LIST
               ? EdgeInsets.only(top: 12.0)
               : EdgeInsets.all(20),
-      content: _items == null || _items =='' ? Text('data') : Container(
+      content: widget.items.isEmpty ? Text('data') : Container(
         height: widget.height,
         width: widget.width ?? MediaQuery.of(context).size.width * 0.73,
         child: widget.listType == null ||
