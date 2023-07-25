@@ -163,11 +163,11 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
           //       ? widget.selectedItemsTextStyle
           //       : widget.itemsTextStyle,
           // ),
-          child: item.title == null || item.title == ''
-          ? Text('Nothing to show') 
-          : Row(
+          child: Row(
             children: [
-              Expanded(
+              item.title == null || item.title == ''
+              ? Text('Nothing to show') 
+              : Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
