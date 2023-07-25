@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:line_icons/line_icons.dart';
 import '../util/multi_select_actions.dart';
 import '../util/multi_select_item.dart';
@@ -382,7 +383,40 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
           widget.listType == null || widget.listType == MultiSelectListType.LIST
               ? EdgeInsets.only(top: 12.0)
               : EdgeInsets.all(20),
-      content: widget.items.isEmpty ? Text('data') : Container(
+      content: widget.items.isEmpty 
+      ? Container(
+        height: widget.height,
+        width: widget.width ?? MediaQuery.of(context).size.width * 0.73,
+        child: Column(
+          children: [
+            Text(
+              'Nothing to show',
+              style: TextStyle(
+                overflow: TextOverflow.ellipsis,
+                color: HexColor('#313131'),
+                fontSize: 16
+              ),
+              softWrap: false,  
+              maxLines: 5,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.left,
+            ),
+            Text(
+              'Please select section',
+              style: TextStyle(
+                overflow: TextOverflow.ellipsis,
+                color: HexColor('#95a1ac'),
+                fontSize: 14
+              ),
+              softWrap: false,  
+              maxLines: 5,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.left,
+            ),
+          ]
+        ),
+      )
+      : Container(
         height: widget.height,
         width: widget.width ?? MediaQuery.of(context).size.width * 0.73,
         child: widget.listType == null ||
